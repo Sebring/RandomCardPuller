@@ -68,7 +68,7 @@ function updateForm() {
 }
 
 function updateBox() {
-	var template = doT.template('{{~it.cards :value:index}}<div class="col-sm-1 card"><div class="{{=value.type}}"><div class="pop text-center"><span class="d">{{=value.drawn}}</span>/<span class="p">{{=value.population}}</span></div></div></div>{{~}}');
+	var template = doT.template('{{~it.cards :value:index}}<div class="col-sx-1 card"><div class="{{=value.type}}"><div class="pop text-center"><span class="d">{{=value.drawn}}</span>/<span class="p">{{=value.population}}</span></div></div></div>{{~}}');
 	var data = template(_box);
 	$('#box_sim').html(data);
 	return data;
