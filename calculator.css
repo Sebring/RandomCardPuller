@@ -1,0 +1,27 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#box_sim div {
+	outline:1px solid black;
+}
+.epic {
+	background-color: powderblue;
+	height: 5em;
+}
+.legendary {
+	background-color: thistle;
+	height: 5em;
+}
+
+.btn {
+	margin-top:1em;
+}
+
+.card.highlight {
+	background-color: hotpink;
+}
