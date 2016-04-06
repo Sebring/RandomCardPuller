@@ -5,9 +5,9 @@ var def_box = {cards:[
 ]};
 
 var _box = def_box;
-var _shards = 0;
-var _pulls = 0;
-$( document ).ready(function() {
+var _tot_shards = 0;
+var _tot_pulls = 0;
+$(document).ready(function() {
 
 	resetBox();
 	$('#spend').hide();
@@ -18,13 +18,12 @@ $( document ).ready(function() {
 	$('#btnPull').click(function() { pullCard()});
 	$('#btnSpend').click(function() { spendAll()});
 
-
 });
 
 function calculateNumPulls() {
-	_shards = $('#num_shards').val();
-	var pulls = Math.floor(_shards/60);
-	_pulls = pulls;
+	var shards = $('#num_shards').val();
+	var pulls = Math.floor(shards/60);
+
 	$('#num_pulls').val(pulls);
 		if (pulls > 0) {
 		$('#spend').show();
@@ -65,15 +64,15 @@ function resetBox() {
 		{population:4, drawn:0, type:"legendary"}, {population:4, drawn:0, type:"legendary"}, {population:4, drawn:0, type:"legendary"}, {population:4, drawn:0, type:"legendary"}, {population:4, drawn:0, type:"legendary"}, {population:4, drawn:0, type:"legendary"}, 
 		{population:8, drawn:0, type:"epic"}, {population:8, drawn:0, type:"epic"}, {population:8, drawn:0, type:"epic"}, {population:8, drawn:0, type:"epic"}, {population:8, drawn:0, type:"epic"}, {population:8, drawn:0, type:"epic"}	
 	]};
-	_shards = 0;
-	_pulls = 0;
+	_tot_shards = 0;
+	_tot_pulls = 0;
 	updateBox();
 	updateForm();
 }
 
 function updateForm() {
-	$('#num_shards').val(_shards);
-	$('#num_pulls').val(_pulls);
+	$('#tot_shards').val(_tot_shards);
+	$('#tot_pulls').val(_tot_pulls);
 }
 
 function updateBox() {
@@ -111,13 +110,8 @@ function pullCard(spendMode) {
 	//Highlight
 	$($('.card').get(card)).toggleClass('highlight');
 
-	if (spendMode) {
-		_shards -= 60;
-		_pulls--;
-	} else {
-		_shards += 60;
-		_pulls++;
-	}
+	_tot_shards += 60;
+	_tot_pulls++;
 	
 	updateForm();
 }
@@ -155,10 +149,15 @@ function removeCard(i) {
 }
 
 function spendAll() {
-	if (_pulls>0) {
+	var shards = $('#num_shards').val();
+	if (shards > 59) {
 		setTimeout(function() {
 			pullCard(true);
 			spendAll();
 		}, 500);
+		$('#num_shards').val(Number(shards-60));
+		var pulls = $('#num_pulls').val();
+		$('#num_pulls').val(Number(--pulls));
 	}
+	
 }
