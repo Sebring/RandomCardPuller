@@ -7,21 +7,41 @@ body {
 }
 
 #box_sim div {
-	outline:1px solid black;
+	padding:0.5em;
 }
 .epic {
 	background-color: powderblue;
 	height: 5em;
+	outline:1px solid black;
 }
 .legendary {
 	background-color: thistle;
 	height: 5em;
+	outline:1px solid black;
 }
 
-.btn {
+#btn_row .btn {
 	margin-top:1em;
 }
 
 .card.highlight {
 	background-color: hotpink;
+}
+.card > div {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center bottom; 
+}
+.card.single > div {
+	*/ background-image: url(single.png); */
+}
+.card.dual > div {
+	background-image: url(dual.png);
+	background-repeat: none;
+}
+.card.quad > div {
+	background-image: url(quad.png);
+}
+.card.full > div {
+	outline-width: 3px;
 }

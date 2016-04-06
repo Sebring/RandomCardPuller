@@ -10,18 +10,27 @@ var _pulls = 0;
 $( document ).ready(function() {
 
 	resetBox();
+	$('#spend').hide();
 
 	$('#num_shards').on('change', calculateNumPulls);
 
 	$('#btnReset').click(function() { resetBox()});
 	$('#btnPull').click(function() { pullCard()});
-
+	$('#btnSpend').click(function() { spendAll()});
 
 
 });
 
 function calculateNumPulls() {
-	$('#num_pulls').val(Math.floor($('#num_shards').val()/60));
+	_shards = $('#num_shards').val();
+	var pulls = Math.floor(_shards/60);
+	_pulls = pulls;
+	$('#num_pulls').val(pulls);
+		if (pulls > 0) {
+		$('#spend').show();
+	} else {
+		$('#spend').hide();
+	}
 }
 
 function chanceToPullLegend() {
@@ -68,13 +77,33 @@ function updateForm() {
 }
 
 function updateBox() {
-	var template = doT.template('{{~it.cards :value:index}}<div class="col-xs-2 col-sm-1 card"><div class="{{=value.type}}"><div class="pop text-center"><span class="d">{{=value.drawn}}</span>/<span class="p">{{=value.population}}</span></div></div></div>{{~}}');
+	var template = doT.template('{{~it.cards :value:index}}<div class="col-xs-2 col-sm-1 card"><div class="{{=value.type}}"><div class="pop text-center"><span class="d" data-drawn="{{=value.drawn}}">{{=value.drawn}}</span>/<span class="p" data-pop="{{=value.population}}">{{=value.population}}</span></div></div></div>{{~}}');
 	var data = template(_box);
 	$('#box_sim').html(data);
+
+	checkDualsAndQuads();
+
 	return data;
 }
 
-function pullCard() {
+function checkDualsAndQuads() {
+	$('.card').each(function(index, value) {
+		var $this = $(this);
+		var drawn = $this.find('.d').data('drawn');
+		if (drawn == 0) return 'continue';
+		if (drawn == 2 || drawn == 3)
+			$this.addClass('dual');
+		if (drawn > 3)
+			$this.addClass('quad');
+		if (drawn==1)
+			$this.addClass('single');
+		if (drawn == $this.find('.p').data('pop')) {
+			$this.addClass('full');
+		}
+	});
+}
+
+function pullCard(spendMode) {
 	var card = removeCard(getRandomCard());
 	updateBox();
 	console.log('Pulled ' + card);
@@ -82,8 +111,14 @@ function pullCard() {
 	//Highlight
 	$($('.card').get(card)).toggleClass('highlight');
 
-	_shards += 60;
-	_pulls++;
+	if (spendMode) {
+		_shards -= 60;
+		_pulls--;
+	} else {
+		_shards += 60;
+		_pulls++;
+	}
+	
 	updateForm();
 }
 
@@ -117,4 +152,13 @@ function removeCard(i) {
 		}
 	});
 	return idx;
+}
+
+function spendAll() {
+	if (_pulls>0) {
+		setTimeout(function() {
+			pullCard(true);
+			spendAll();
+		}, 500);
+	}
 }
