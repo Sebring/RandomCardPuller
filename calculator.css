@@ -9,19 +9,25 @@ body {
 #box_sim div {
 	padding:0.5em;
 }
-.epic {
-	background-color: powderblue;
+.card > div {
 	height: 5em;
 	outline:1px solid black;
 }
-.legendary {
+.epic .badge {
+	background-color: powderblue;
+	color:black;
+}
+.legendary .badge {
 	background-color: thistle;
-	height: 5em;
-	outline:1px solid black;
+	color:black;
 }
 
 #btn_row .btn {
 	margin-top:1em;
+}
+
+.card .badge {
+	margin-top:3em;
 }
 
 .card.highlight {
