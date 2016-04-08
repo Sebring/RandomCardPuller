@@ -10,7 +10,7 @@ body {
 	padding:0.5em;
 }
 .card > div {
-	height: 5em;
+	width: 100%;
 	outline:1px solid black;
 }
 .epic .badge {
