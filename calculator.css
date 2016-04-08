@@ -38,14 +38,18 @@ body {
 	background-size: contain;
 	background-position: center bottom; 
 }
-.card.single > div {
+.card .level {
+	height:2em;
+	background-color: white;
+}
+.card.single .level {
 	*/ background-image: url(single.png); */
 }
-.card.dual > div {
+.card.dual .level {
 	background-image: url(dual.png);
 	background-repeat: none;
 }
-.card.quad > div {
+.card.quad .level {
 	background-image: url(quad.png);
 }
 .card.full > div {

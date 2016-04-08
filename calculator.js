@@ -36,7 +36,7 @@ $(document).ready(function() {
 });
 
 function addImages() {
-	$('.card > div').each( function(index) {
+	$('.card > div').not('.level').each( function(index) {
 		var $this = $(this);
 		console.log(_box_pic[index]);
 		$this.css('background-image', 'url(' + _box_pic[index] + ')');
@@ -99,7 +99,7 @@ function updateForm() {
 }
 
 function updateBox() {
-	var template = doT.template('{{~it.cards :value:index}}<div class="col-xs-2 col-sm-1 card"><div class="{{=value.type}}"><div class="pop text-center badge"><span class="d" data-drawn="{{=value.drawn}}">{{=value.drawn}}</span>/<span class="p" data-pop="{{=value.population}}">{{=value.population}}</span></div></div></div>{{~}}');
+	var template = doT.template('{{~it.cards :value:index}}<div class="col-xs-2 col-sm-1 card"><div><div class="{{=value.type}}"><div class="pop text-center badge"><span class="d" data-drawn="{{=value.drawn}}">{{=value.drawn}}</span>/<span class="p" data-pop="{{=value.population}}">{{=value.population}}</span></div></div></div><div class="level"></div></div>{{~}}');
 	var data = template(_box);
 	$('#box_sim').html(data);
 
