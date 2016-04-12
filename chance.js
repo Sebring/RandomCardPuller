@@ -13,7 +13,7 @@ function ChancePack() {
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Dino_Frog_B.jpg",
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Winter_Angel_B.jpg",
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Flying_Behemoth_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Fox_Spirit_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Mystical_Fox_Spirit_B.jpg",
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Frozen_Frog_B.jpg",	
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Steel_Dragon_B.jpg",
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Swiftness_Elemental_B.jpg",
