@@ -6,8 +6,12 @@ body {
   text-align: center;
 }
 
-#box_sim div {
-	padding:0.5em;
+.sim {
+	padding-top: 1em;
+}
+
+.sim div {
+	padding:1em 0.5em 2px 0.5em;
 }
 .card > div {
 	width: 100%;
