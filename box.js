@@ -10,18 +10,18 @@ function BoxPack() {
 	var cards = _def_cards;
 
 	var _cards_pic = [
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/High_Knight_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Ethereal_Angel_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/2b18a9af0fcb5fc15af04b7dd663958caaf75116/res/cardImages/Goblin_Explosioneer_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Legendary_Chaos_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/f53fea9f9180f29104ac24267e7ac1733ba5b30f/res/cardImages/Giant_Sword_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Rhino_Beast_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/f53fea9f9180f29104ac24267e7ac1733ba5b30f/res/cardImages/Cloud_Pike_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Concealed_Dragon_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Raptor_Bird_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Night_Dragon_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Smoke_Dragon_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Fuming_Horror_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Root_Elemental_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Emperor_Frog_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Cloud_Pike_Frog_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Frog_Mage_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Branding_Metal_Construct_B.jpg",
 	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Spike_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Spinehead_Undead_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Frog_Shaman_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Huntress_Frog_B.jpg"
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Big_And_Little_B.jpg",
+	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Water_Manipulator_B.jpg"
 	];
 
 	var $content = $('#box_sim');
