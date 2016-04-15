@@ -3,7 +3,7 @@ function ChancePack() {
 	var self = this;
 
 	var _def_cards = {card:[
-		{drawn:0, type:"legendary"},{drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, 
+		{drawn:0, type:"legendary"},{drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"epic"}, 
 		{drawn:0, type:"epic"},{drawn:0, type:"epic"}, {drawn:0, type:"epic"}, {drawn:0, type:"epic"}, {drawn:0, type:"epic"}
 	]};
 
@@ -25,7 +25,7 @@ function ChancePack() {
 	var $content = $('#pack_sim');
 
 	function update() {
-		var template = doT.template('<div class="col-xs-1 col-md-1"></div>{{~it.card :value:index}}<div class="col-xs-2 {{? index>4}}col-xs-push-1{{?}} col-md-1 card"><div><div class="{{=value.type}}"><div class="pop text-center badge"><span class="d" data-drawn="{{=value.drawn}}">{{=value.drawn}}</span></div></div></div><div class="level"></div></div>{{~}}<div class="col-xs-1"></div>');
+		var template = doT.template('<div class="col-xs-1 col-md-1"></div>{{~it.card :value:index}}<div class="col-xs-2 {{? index>4}}col-xs-push-1{{?}}  {{? index==4}}col-md-push-1{{?}} col-md-1 card"><div><div class="{{=value.type}}"><div class="pop text-center badge"><span class="d" data-drawn="{{=value.drawn}}">{{=value.drawn}}</span></div></div></div><div class="level"></div></div>{{~}}<div class="col-xs-1"></div>');
 		var data = template(cards);
 		$content.html(data);
 
@@ -42,7 +42,7 @@ function ChancePack() {
 
 	function reset() {
 		cards = {card:[
-			{drawn:0, type:"legendary"},{drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, 
+			{drawn:0, type:"legendary"},{drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"legendary"}, {drawn:0, type:"epic"},
 			{drawn:0, type:"epic"},{drawn:0, type:"epic"}, {drawn:0, type:"epic"}, {drawn:0, type:"epic"}, {drawn:0, type:"epic"}
 		]};
 		update();
