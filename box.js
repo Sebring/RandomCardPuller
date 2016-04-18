@@ -10,18 +10,18 @@ function BoxPack() {
 	var cards = _def_cards;
 
 	var _cards_pic = [
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Raptor_Bird_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Night_Dragon_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Smoke_Dragon_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Fuming_Horror_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Root_Elemental_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Emperor_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Cloud_Pike_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Frog_Mage_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Branding_Metal_Construct_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Spike_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Big_And_Little_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Water_Manipulator_B.jpg"
+	"Raptor_Bird_B",
+	"Night_Dragon_B",
+	"Smoke_Dragon_B",
+	"Fuming_Horror_B",
+	"Root_Elemental_B",
+	"Emperor_Frog_B",
+	"Cloud_Pike_Frog_B",
+	"Frog_Mage_B",
+	"Branding_Metal_Construct_B",
+	"Spike_Frog_B",
+	"Big_And_Little_B",
+	"Water_Manipulator_B"
 	];
 
 	var $content = $('#box_sim');
@@ -48,7 +48,12 @@ function BoxPack() {
 	function addImages() {
 		$content.find('.card > div').not('.level').each( function(index) {
 			var $this = $(this);
-			$this.css('background-image', 'url(' + _cards_pic[index] + ')');
+			var url = 'http://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/';
+			if (box_pic) {
+				$this.css('background-image', 'url(' + url + box_pic[index].pic + '.jpg)');
+			} else {
+				$this.css('background-image', 'url(' + url + _cards_pic + '.jpg)');
+			}
 		});
 	}
 

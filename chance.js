@@ -10,16 +10,16 @@ function ChancePack() {
 	var cards = _def_cards;
 
 	var _cards_pic = [
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Dino_Frog_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Winter_Angel_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Flying_Behemoth_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Mystical_Fox_Spirit_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Frozen_Frog_B.jpg",	
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Steel_Dragon_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Swiftness_Elemental_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Acid_Elemental_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Shadow_Elemental_B.jpg",
-	"https://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/Swamp_Elemental_B.jpg"
+	"Dino_Frog_B",
+	"Winter_Angel_B",
+	"Flying_Behemoth_B",
+	"Mystical_Fox_Spirit_B",
+	"Frozen_Frog_B",	
+	"Steel_Dragon_B",
+	"Swiftness_Elemental_B",
+	"Acid_Elemental_B",
+	"Shadow_Elemental_B",
+	"Swamp_Elemental_B"
 	];
 
 	var $content = $('#pack_sim');
@@ -36,7 +36,12 @@ function ChancePack() {
 	function addImages() {
 		$content.find('.card > div').not('.level').each( function(index) {
 			var $this = $(this);
-			$this.css('background-image', 'url(' + _cards_pic[index] + ')');
+			var url = 'http://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/';
+			if (chance_pic) {
+				$this.css('background-image', 'url(' + url + chance_pic[index].pic + '.jpg)');
+			} else {
+				$this.css('background-image', 'url(' + url + _cards_pic[index] + '.jpg)');
+			}
 		});
 	}
 
