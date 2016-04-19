@@ -14,3 +14,15 @@ box_pic=
   { id: '7051', pic: 'Big_And_Little_A' },
   { id: '7005', pic: 'Water_Manipulator_A' } ]
 ;
+chance_pic=
+[ { id: '7049', pic: 'Steam_Roller_A' },
+  { id: '5049', pic: 'Marble_Golem_A' },
+  { id: '6018', pic: 'Legendary_Chaos_Frog_A' },
+  { id: '7050', pic: 'Giant_Sword_Frog_A' },
+  { id: '5046', pic: 'Dawn_Elemental_A' },
+  { id: '5044', pic: 'Telepathic_Mage_A' },
+  { id: '6044', pic: 'Fire_Walker_A' },
+  { id: '6036', pic: 'Void_Ogre_A' },
+  { id: '7016', pic: 'Frog_Shaman_A' },
+  { id: '7045', pic: 'Sakura_Petal_Elemental_A' } ]
+;
