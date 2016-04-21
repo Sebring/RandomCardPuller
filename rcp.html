@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="calculator.css" rel="stylesheet">
+    <link href="css/rcp.css" rel="stylesheet">
 
-    <title>RCP 0.7</title>
+    <title>RCP 0.8.1</title>
 
   </head>
 <body>
@@ -36,19 +36,20 @@
     <div class="row">
       <div class="col-xs-4">
         <div class="btn-group" role="group" aria-label="Type of pack">
-          <button type="button" class="btn btn-default active" id="selectBox">Box</button>
-          <button type="button" class="btn btn-default" id="selectChance">Chance</button>
+          <button type="button" class="btn btn-default active" id="selectBox" data-bind="click: toggleBox"><span data-bind="text: box.name"></span></button>
+          <button type="button" class="btn btn-default" id="selectPack" data-bind="click: togglePack"><span data-bind="text: pack.name"></span></button>
         </div>
       </div>
 
-      <div class="col-xs-8">
+      <div class="col-xs-4">
         <div class="input-group">
-          <input type="text" class="form-control" id="num_shards" placeholder="Shards to spend"/>
+          <input type="text" class="form-control" id="num_shards" data-bind="value: shardsAvailable, attr: {placeholder:'Add shards'}"/>
           <span class="input-group-btn">
-            <button class="btn btn-success" type="button" id="btnSpend">Pull 0</button>
+            <button class="btn btn-success" type="button" data-bind="click: spendAll">Pull <span data-bind="text: pullsAvailable" id="btnSpend"></span></button>
           </span>
         </div>
       </div>
+
     </div>
       
 
@@ -106,24 +107,61 @@
 
     </div>
 
-    <div class="row sim" id="pack_sim">
-
+  <div data-bind="visible: showBox()">
+    <div class="row box">
+      <div class="col-xs-12"><h2 data-bind="text: box.name"></h2></div>
     </div>
+    <div class="row sim box" data-bind="foreach: box.cards">
+      <div class="card col-xs-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
+        <div data-bind="style: { backgroundImage: bg}">
+          <div data-bind="css: { legendary: rarity==4, epic: rarity==3}">
+            <div class="pop text-center badge">
+              <span data-bind="text: drawn">&nbsp;</span>
+              /
+              <span data-bind="text: population">&nbsp</span>
+            </div>
+          </div>
+        </div>
+        <div class="level" data-bind="css: {quad: drawn()>3, dual: drawn()>1}">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div data-bind="visible: showPack()">
+    <div class="row pack">
+      <div class="col-xs-12"><h2 data-bind="text: pack.name"></h2></div>
+    </div>
+    <div class="row sim pack"  data-bind="foreach: pack.cards">
+      <div class="card col-xs-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
+        <div data-bind="style: { backgroundImage: bg}">
+          <div data-bind="css: { legendary: rarity==4, epic: rarity==3}">
+            <div class="pop text-center badge">
+              <span data-bind="text: drawn">&nbsp;</span>
+            </div>
+          </div>
+        </div>
+        <div class="level" data-bind="css: {quad: drawn()>3, dual: drawn()>1}">
+        </div>
+      </div>
+    </div>
+  </div>
+    
     
     <div class="row" id="btn_row">
       <div class="col-xs-3">
-        <button class="btn btn-success text-center" id="btnPull">Pull 1</button>
+        <button class="btn btn-success text-center" data-bind="click: pull">Pull 1</button>
       </div>
       <div class="col-xs-3">
        <label for="usr">Shards cost:</label>
-          <input type="text" class="form-control" readonly id="tot_shards">
+          <input type="text" class="form-control" data-bind="value: shardsSpent" />
       </div>
       <div class="col-xs-3">
         <label for="usr">No. of pulls:</label>
-          <input type="text" class="form-control" readonly id="tot_pulls">
+          <input type="text" class="form-control" data-bind="value: pullsTotal" />
       </div>
       <div class="col-xs-3">
-        <button class="btn btn-danger" id="btnReset">Reset</button>
+        <button class="btn btn-danger"  data-bind="click: reset">Reset</button>
       </div>
     </div>
 
@@ -132,11 +170,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     
-    <script src="box.js"></script>
-    <script src="chance.js"></script>
-    <script src="calculator.js"></script>
-    <script src="box_data.js"></script>
-    <script src="dot.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+    <script src="js/dot.js"></script>
+
+    
+    
+    <script src="js/box.js"></script>
+    <script src="js/chance.js"></script>
+    <script src="js/box_data.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="res/box_data.js"></script>
+    <script src="js/rcp_vm.js"></script>
 
   </body>
 </html>
