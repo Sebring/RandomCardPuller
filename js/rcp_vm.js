@@ -1,6 +1,6 @@
 function RandomCardPuller() {
 	var self = this;
-	console.log("RandomCardPuller -version 0.8.3");
+	console.log("RandomCardPuller -version 0.8.4");
 
 	self.showBox = ko.observable(true);
 	self.showPack = ko.observable(false);
@@ -112,20 +112,23 @@ function Box(data, type) {
 	self.pullCard = function(i) {
 		
 		// CHANCE
-		if (self.isChancePack) {
+		if (self.isChancePack()) {
 			self.cards()[i].drawn(self.cards()[i].drawn()+1);
 			return i;
 		}
 
 		// BOX
 		var p=0;
+		var idx = 0;
 		$.each(self.cards(), function(index) {
 			p += this.population() - this.drawn();
 			if (p!=0 && p >= i) {
 				this.drawn(this.drawn()+1);
-				return index;
+				idx = index;
+				return false;
 			}
 		});
+		return idx;
 	}
 
 	self.getRandom = function() {
@@ -135,7 +138,7 @@ function Box(data, type) {
 	self.getAvailable = function() {
 		
 		// CHANCE
-		if (self.isChancePack) {
+		if (self.isChancePack()) {
 			return self.cards().length;
 		}
 
@@ -153,5 +156,4 @@ function Box(data, type) {
 			this.drawn(0);
 		});
 	}
-
 };
