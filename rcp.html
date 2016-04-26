@@ -112,7 +112,7 @@
       <div class="col-xs-12"><h2 data-bind="text: box.name"></h2></div>
     </div>
     <div class="row sim box" data-bind="foreach: box.cards">
-      <div class="card col-xs-3 col-sm-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
+      <div class="card col-xs-2 col-sm-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
         <div>
         <img data-bind="attr: { src: bg}"class="img-responsive"/>
           <div data-bind="css: { legendary: rarity==4, epic: rarity==3}">
@@ -134,7 +134,7 @@
       <div class="col-xs-12"><h2 data-bind="text: pack.name"></h2></div>
     </div>
     <div class="row sim pack"  data-bind="foreach: pack.cards">
-      <div class="card col-xs-3 col-sm-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
+      <div class="card col-xs-2 col-sm-2 col-md-1" data-bind="attr: {title: name}, css: {full: drawn()==population()}">
         <div>
         <img data-bind="attr: {src: bg}" class="img-responsive"/>
           <div data-bind="css: { legendary: rarity==4, epic: rarity==3}">
