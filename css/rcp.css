@@ -20,6 +20,10 @@ h2 {
 	padding-top: 1em;
 }
 
+.card {
+	margin-top:1em;
+}
+
 .card > div {
 	height: 150px;
 	background-repeat: no-repeat;
@@ -50,7 +54,7 @@ h2 {
 
 
 .card.highlight {
-	background-color: hotpink;
+	outline:5px solid maroon;
 }
 .card .level {
 	height:2em;
