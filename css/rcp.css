@@ -70,9 +70,6 @@ h2 {
 .card.quad .level {
 	background-image: url(../res/quad.png);
 }
-.card.full > div {
-	outline-width: 3px;
-}
 .level.dual {
 	background-image: url(../res/dual.png);
 	background-repeat: no-repeat;
@@ -83,6 +80,6 @@ h2 {
 	background-size: contain;
 	background-position: center;
 }
-.card.full > div {
+.box .card.full > div {
 	outline-width: 3px;
 }
