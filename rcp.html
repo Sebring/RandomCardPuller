@@ -8,7 +8,7 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/rcp.css" rel="stylesheet">
 
-    <title>RCP 0.8.1</title>
+    <title>Random Card Puller</title>
 
   </head>
 <body>
@@ -34,14 +34,14 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-md-4 col-xs-6">
         <div class="btn-group" role="group" aria-label="Type of pack">
           <button type="button" class="btn btn-default active" id="selectBox" data-bind="click: toggleBox"><span data-bind="text: box.name"></span></button>
           <button type="button" class="btn btn-default" id="selectPack" data-bind="click: togglePack"><span data-bind="text: pack.name"></span></button>
         </div>
       </div>
 
-      <div class="col-xs-4">
+      <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="input-group">
           <input type="text" class="form-control" id="num_shards" data-bind="value: shardsAvailable, attr: {placeholder:'Add shards'}"/>
           <span class="input-group-btn">

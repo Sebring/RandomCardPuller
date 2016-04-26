@@ -1,5 +1,4 @@
 function highlightCard(boxIndex, packIndex) {
-	console.log('highlight ' + boxIndex);
 	var $cards = $('.sim.box').find('.card');
 	$cards.removeClass('highlight');
 	$cards.eq(boxIndex).addClass('highlight');

@@ -1,6 +1,7 @@
 function RandomCardPuller() {
 	var self = this;
-	
+	console.log("RandomCardPuller -version 0.8.2");
+
 	self.showBox = ko.observable(true);
 	self.showPack = ko.observable(false);
 	self.shardsAvailable = ko.observable();
@@ -28,7 +29,7 @@ function RandomCardPuller() {
 	} else console.log('No chance pack found');
 
 	self.pull = function() {
-		console.log('RCP - pull')
+		//console.log('RCP - pull')
 		var boxIndex = self.box.pull();
 		var packIndex = self.pack.pull();
 		self.shardsSpent(self.shardsSpent()+60);
@@ -105,7 +106,6 @@ function Box(data, type) {
 
 	self.pull = function() {
 		var index = self.getRandom();
-		console.log(self.name + ' pull ' + index);
 		return self.pullCard(index);
 	}
 
@@ -145,7 +145,6 @@ function Box(data, type) {
 			var p = this.population() - this.drawn();
 			pop += p;
 		});
-		console.log('Available: ' + pop);
 		return pop;
 	}
 
