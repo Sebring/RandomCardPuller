@@ -1,6 +1,6 @@
 function RandomCardPuller() {
 	var self = this;
-	console.log("RandomCardPuller -version 0.8.2");
+	console.log("RandomCardPuller -version 0.8.3");
 
 	self.showBox = ko.observable(true);
 	self.showPack = ko.observable(false);
@@ -81,7 +81,7 @@ function Card(data) {
 		return self.population - self.drawn();
 	});
 	self.bg = ko.computed(function() {
-		return 'url(http://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/' + self.portrait+'.jpg)';
+		return 'http://cdn.rawgit.com/TheSench/SIMSpellstone/gh-pages/res/cardImages/' + self.portrait+'.jpg';
 	});
 };
 

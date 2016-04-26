@@ -25,13 +25,15 @@ h2 {
 }
 
 .card > div {
-	height: 150px;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center bottom;
 	text-align: center;
 	position: relative;
 	outline:1px solid black;
+}
+.card img {
+	margin:auto;
 }
 .epic .badge {
 	background-color: powderblue;
