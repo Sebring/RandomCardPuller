@@ -75,10 +75,13 @@ h2 {
 }
 .level.dual {
 	background-image: url(../res/dual.png);
-	background-repeat: none;
+	background-repeat: no-repeat;
 }
 .level.quad {
 	background-image: url(../res/quad.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 .card.full > div {
 	outline-width: 3px;
