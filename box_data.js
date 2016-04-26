@@ -15,14 +15,14 @@ box_pic=
   { id: '7035', pic: 'Undead_Tiger_A' } ]
 ;
 chance_pic=
-[ { id: '7049', pic: 'Steam_Roller_A' },
-  { id: '5049', pic: 'Marble_Golem_A' },
-  { id: '6018', pic: 'Legendary_Chaos_Frog_A' },
-  { id: '7050', pic: 'Giant_Sword_Frog_A' },
-  { id: '5046', pic: 'Dawn_Elemental_A' },
-  { id: '5044', pic: 'Telepathic_Mage_A' },
-  { id: '6044', pic: 'Fire_Walker_A' },
-  { id: '6036', pic: 'Void_Ogre_A' },
-  { id: '7016', pic: 'Frog_Shaman_A' },
-  { id: '7045', pic: 'Sakura_Petal_Elemental_A' } ]
-;
+[{"id":"5054","pic":"Reckless_Ballista_A","name":"Reckless Ballista"},
+{"id":"5048","pic":"Rose_Elemental_A","name":"Highborn Rose"},
+{"id":"6048","pic":"Dino_Frog_A","name":"Bulwraag"},
+{"id":"7018","pic":"Emperor_Frog_A","name":"Frog Emperor"},
+{"id":"5050","pic":"Cloud_Pike_Frog_A","name":"Cloud Spear"},
+{"id":"5024","pic":"Sky_Dragon_A","name":"Cloudtop Dragon"},
+{"id":"6025","pic":"Dragon_Warlord_A","name":"Dragon Keeper"},
+{"id":"6020","pic":"Spike_Frog_A","name":"Croak Piercer"},
+{"id":"7051","pic":"Big_And_Little_A","name":"Stinglash Rider"},
+{"id":"7030","pic":"Penguin_Warrior_A","name":"Arctic Ambusher"}];
+
