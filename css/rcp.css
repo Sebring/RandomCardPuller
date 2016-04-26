@@ -1,6 +1,16 @@
 body {
   padding-top: 50px;
 }
+
+h1, h2 {
+	margin:0;
+}
+
+h2 {
+	font-size:20px;
+	margin-top:1em;
+}
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -54,6 +64,16 @@ body {
 	background-repeat: none;
 }
 .card.quad .level {
+	background-image: url(../res/quad.png);
+}
+.card.full > div {
+	outline-width: 3px;
+}
+.level.dual {
+	background-image: url(../res/dual.png);
+	background-repeat: none;
+}
+.level.quad {
 	background-image: url(../res/quad.png);
 }
 .card.full > div {
