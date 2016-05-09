@@ -4,6 +4,8 @@ function RandomCardPuller() {
 
 	self.showBox = ko.observable(true);
 	self.showPack = ko.observable(false);
+	self.hasBox = ko.observable();
+	self.hasPack = ko.observable();
 	self.shardsAvailable = ko.observable();
 	self.shardsSpent = ko.observable(0);
 	self.pullsAvailable = ko.computed(function() {
@@ -18,29 +20,39 @@ function RandomCardPuller() {
 
 	if (typeof _box_data == 'undefined') {
 			console.log('No data found');
+			self.hasPack(false);
+			self.hasBox(false);
 			return;
 	}
 	if (typeof _box_data.box !== 'undefined') {
 		self.box = new Box(_box_data.box, 1);
-	} else console.log('No box found');
+		self.hasBox(true);
+	} else self.hasPack(false);
 
 	if (typeof _box_data.pack !== 'undefined') {
 		self.pack = new Box(_box_data.pack, 2);
-	} else console.log('No chance pack found');
+	} else self.hasPack(false);
 
 	self.pull = function() {
 		//console.log('RCP - pull')
-		var boxIndex = self.box.pull();
-		var packIndex = self.pack.pull();
+		var boxIndex = false;
+		var packIndex = false;
+		if (self.hasBox())
+			boxIndex = self.box.pull();
+		if (self.hasPack())
+			packIndex = self.pack.pull();
+		
 		self.shardsSpent(self.shardsSpent()+60);
-
 		highlightCard(boxIndex, packIndex);
 	}
 
 	self.reset = function() {
-		self.box.reset();
-		self.pack.reset();
+		if (self.hasBox()) 
+			self.box.reset();
+		if (self.hasPack()) 
+			self.pack.reset();
 		self.shardsSpent(0);
+		highlightCard(false, false);
 	}
 
 	self.toggleBox = function() {
